@@ -6,6 +6,7 @@ typedef enum
   True
 } Bool;
 
+typedef int * Int_Ptr;
 typedef int (*Mapper)(int);
 typedef Bool (*Predicate)(int);
 typedef int (*Reducer)(int, int);
@@ -16,8 +17,10 @@ typedef struct
   int length;
 } Array;
 
-Array *map(Array *src, Mapper mapper);
-Array *filter(Array *src, Predicate predicate);
+typedef Array * Array_Ptr;
+Array_Ptr map(Array *src, Mapper mapper);
+Array_Ptr filter(Array *src, Predicate predicate);
 int reduce(Array *src, int init, Reducer reducer);
+Array_Ptr create_numbers(int length);
 
 #endif
