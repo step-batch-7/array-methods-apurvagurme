@@ -28,7 +28,7 @@ Bool greater_than_0(int number)
 
 int main(void)
 {
-  Array_Ptr numbers = create_numbers(3);
+  Array_Ptr numbers = create_array(3);
   numbers->array[0] = 1;
   numbers->array[1] = 2;
   numbers->array[2] = 3;

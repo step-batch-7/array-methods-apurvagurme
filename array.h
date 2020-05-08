@@ -17,10 +17,10 @@ typedef struct
   int length;
 } Array;
 
-typedef Array * Array_Ptr;
-Array_Ptr map(Array *src, Mapper mapper);
-Array_Ptr filter(Array *src, Predicate predicate);
-int reduce(Array *src, int init, Reducer reducer);
-Array_Ptr create_numbers(int length);
+typedef Array *Array_Ptr;
+Array_Ptr map(Array_Ptr src, Mapper mapper);
+Array_Ptr filter(Array_Ptr src, Predicate predicate);
+int reduce(Array_Ptr src, int init, Reducer reducer);
+Array_Ptr create_array(int length);
 
 #endif
