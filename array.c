@@ -29,7 +29,7 @@ Array_Ptr filter(Array_Ptr numbers, Predicate greater_than_0)
     Bool status = greater_than_0(numbers->array[i]);
     if (status == True)
     {
-      result[i] = numbers->array[i];
+      result[count] = numbers->array[i];
       count++;
     }
   }
