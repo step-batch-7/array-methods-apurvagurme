@@ -5,7 +5,7 @@
 
 Object increment_void(Object num)
 {
-  long int number = (long int )num;
+  long int number = (long int)num;
   Object result = (Object)(number + 1);
   return result;
 }
@@ -37,6 +37,32 @@ ArrayVoid_ptr map_void(ArrayVoid_ptr src, MapperVoid mapper)
     count++;
   }
   return result;
+}
+
+void copy_void(ArrayVoid_ptr into, Object from[])
+{
+  for (int i = 0; i < into->length; i++)
+  {
+    into->array[i] = (Object)(long int)from[i];
+  }
+}
+
+ArrayVoid_ptr filter_void(ArrayVoid_ptr src, PredicateVoid predicate)
+{
+  Object result[src->length];
+  int count = 0;
+  for (int i = 0; i < src->length; i++)
+  {
+    Bool status = predicate(src->array[i]);
+    if (status == True)
+    {
+      result[count] = src->array[i];
+      count++;
+    }
+  }
+  ArrayVoid_ptr filtered_list = create_void_array(count);
+  copy_void(filtered_list, result);
+  return filtered_list;
 }
 
 Object reduce_void(ArrayVoid_ptr src, Object init, ReducerVoid reducer)

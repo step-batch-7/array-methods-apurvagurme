@@ -38,5 +38,6 @@ int main(void)
   Object result4 = map_void(numbers_list, &increment_void);
   printf("\nIncremented numbers list is:\n");
   display_number_array(result4);
+
   return 0;
 }

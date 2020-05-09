@@ -22,6 +22,7 @@ Object reduce_void(ArrayVoid_ptr src, Object init, ReducerVoid reducer);
 
 ArrayVoid_ptr create_void_array(int length);
 Object increment_void(Object num);
+Object add_void(Object previous, Object a);
 void display_number_array(ArrayVoid_ptr array);
 
 #endif
