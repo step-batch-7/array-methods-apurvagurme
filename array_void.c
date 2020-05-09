@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include <ctype.h> 
 
+
 ArrayVoid_ptr create_void_array(int length)
 {
   ArrayVoid_ptr numbers = malloc(sizeof(ArrayVoid));
@@ -13,7 +14,7 @@ ArrayVoid_ptr create_void_array(int length)
 
 ArrayVoid_ptr map_void(ArrayVoid_ptr src, MapperVoid mapper)
 {
-  ArrayVoid_ptr result = create_void_array(3);
+  ArrayVoid_ptr result = create_void_array(src->length);
   int count = 0;
   for (int i = 0; i < src->length; i++)
   {
