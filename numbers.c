@@ -10,28 +10,11 @@ void display(Int_Ptr array, int length)
   }
 }
 
-int double_elements(int number)
-{
-  return number * 2;
-}
-
-int add(int previous, int a)
-{
-  return previous + a;
-}
-
-Bool greater_than_0(int number)
-{
-  Bool is_greater = number > 0 ? True : False;
-  return is_greater;
-}
-
 int main(void)
 {
   Array_Ptr numbers = create_array(3);
-  numbers->array[0] = 1;
-  numbers->array[1] = 2;
-  numbers->array[2] = 3;
+  int numbers_array[3] = {1, 2, 3};
+  copy(numbers, numbers_array);
 
   Array_Ptr result1 = map(numbers, &double_elements);
   printf("\nMapped List is:\n");

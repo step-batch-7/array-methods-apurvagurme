@@ -2,6 +2,22 @@
 #include<stdlib.h>
 #include"array.h"
 
+int double_elements(int number)
+{
+  return number * 2;
+}
+
+int add(int previous, int a)
+{
+  return previous + a;
+}
+
+Bool greater_than_0(int number)
+{
+  Bool is_greater = number > 0 ? True : False;
+  return is_greater;
+}
+
 Array_Ptr create_array(int length)
 {
   Array_Ptr numbers = malloc(sizeof(Array));
@@ -20,6 +36,14 @@ Array_Ptr map(Array_Ptr src, Mapper mapper)
   return result;
 }
 
+void copy(Array_Ptr into, int from[])
+{
+  for (int i = 0; i < into->length; i++)
+  {
+    into->array[i] = from[i];
+  }
+}
+
 Array_Ptr filter(Array_Ptr src, Predicate predicate)
 {
   int result[src->length];
@@ -34,10 +58,7 @@ Array_Ptr filter(Array_Ptr src, Predicate predicate)
     }
   }
   Array_Ptr filtered_list = create_array(count);
-  for (int i = 0; i < count; i++)
-  {
-    filtered_list->array[i] = result[i];
-  }
+  copy(filtered_list, result);
   return filtered_list;
 }
 
