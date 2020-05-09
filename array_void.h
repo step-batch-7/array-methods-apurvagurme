@@ -21,9 +21,7 @@ ArrayVoid_ptr filter_void(ArrayVoid_ptr src, PredicateVoid predicate);
 Object reduce_void(ArrayVoid_ptr src, Object init, ReducerVoid reducer);
 
 ArrayVoid_ptr create_void_array(int length);
-Object double_numbers(Object number);
-Object to_lowercase(Object data);
-void display_number(Object *array, int length);
-void display_char(Object *array, int length);
+Object increment_void(Object num);
+void display_number_array(ArrayVoid_ptr array);
 
 #endif
