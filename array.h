@@ -13,14 +13,16 @@ typedef int (*Reducer)(int, int);
 
 typedef struct
 {
-  int *array;
+  Int_Ptr array;
   int length;
 } Array;
 
 typedef Array *Array_Ptr;
+
 Array_Ptr map(Array_Ptr src, Mapper mapper);
 Array_Ptr filter(Array_Ptr src, Predicate predicate);
 int reduce(Array_Ptr src, int init, Reducer reducer);
+
 Array_Ptr create_array(int length);
 int double_elements(int number);
 int add(int previous, int a);

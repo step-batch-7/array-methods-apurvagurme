@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include <ctype.h> 
 #include"array.h"
+#include"array_void.h"
 
 void display(Int_Ptr array, int length)
 {
@@ -27,5 +29,6 @@ int main(void)
   Array_Ptr result3 = filter(numbers, &greater_than_0);
   printf("\nFiltered List is:\n");
   display(result3->array, result3->length);
+  
   return 0;
 }
