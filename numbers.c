@@ -31,9 +31,10 @@ int main(void)
   display(result3->array, result3->length);
 
   ArrayVoid_ptr numbers_list = create_void_array(3);
-  numbers_list->array[0] = (void *)1; 
-  numbers_list->array[1] = (void *)2; 
-  numbers_list->array[2] = (void *)3;
+  int a[] = {1, 2, 3};
+  numbers_list->array[0] = a; 
+  numbers_list->array[1] = a+1; 
+  numbers_list->array[2] = a+2;
 
   Object result4 = map_void(numbers_list, &increment_void);
   printf("\nIncremented numbers list is:\n");

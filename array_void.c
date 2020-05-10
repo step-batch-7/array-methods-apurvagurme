@@ -1,20 +1,14 @@
 #include"array_void.h"
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 #include <ctype.h> 
-
-Object increment_void(Object num)
-{
-  long int number = (long int)num;
-  Object result = (Object)(number + 1);
-  return result;
-}
 
 void display_number_array(ArrayVoid_ptr array)
 {
   for (int index = 0; index < array->length; index++)
   {
-    printf("%d\n", (int)array->array[index]);
+    printf("%d\n", *(int *)array->array[index]);
   }
   printf("\n");
 }
@@ -25,6 +19,14 @@ ArrayVoid_ptr create_void_array(int length)
   numbers->array = malloc(sizeof(Object) * length); 
   numbers->length = length;
   return numbers;
+}
+
+Object increment_void(Object num)
+{
+  int incremented_value = (*(int *)num + 1);
+  Object incremented_void_value = malloc(sizeof(int));
+  memcpy(incremented_void_value, &incremented_value, sizeof(int));
+  return (Object) incremented_void_value;
 }
 
 ArrayVoid_ptr map_void(ArrayVoid_ptr src, MapperVoid mapper)
