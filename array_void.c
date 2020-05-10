@@ -26,7 +26,7 @@ Object increment_void(Object num)
   int incremented_value = (*(int *)num + 1);
   Object incremented_void_value = malloc(sizeof(int));
   memcpy(incremented_void_value, &incremented_value, sizeof(int));
-  return (Object) incremented_void_value;
+  return incremented_void_value;
 }
 
 ArrayVoid_ptr map_void(ArrayVoid_ptr src, MapperVoid mapper)
@@ -45,6 +45,11 @@ void copy_void(ArrayVoid_ptr into, Object from[])
   {
     into->array[i] = (Object)(long int)from[i];
   }
+}
+
+Bool is_even_void (Object number)
+{
+  return *(int *)number % 2 == 0 ? True : False;
 }
 
 ArrayVoid_ptr filter_void(ArrayVoid_ptr src, PredicateVoid predicate)

@@ -40,5 +40,9 @@ int main(void)
   printf("\nIncremented numbers list is:\n");
   display_number_array(result4);
 
+  Object result5 = filter_void(numbers_list, &is_even_void);
+  printf("\nEven numbers list is:\n");
+  display_number_array(result5);
+
   return 0;
 }
